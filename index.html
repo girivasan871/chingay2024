@@ -169,30 +169,39 @@
           }
         });
 
-      let counter = 0;
-      const users = new Set();
+      // Initialize the counter and get users from localStorage
+        let counter = parseInt(localStorage.getItem('counter')) || 0; // Retrieve or initialize counter
+        const users = new Set(JSON.parse(localStorage.getItem('users')) || []); // Retrieve or initialize users
 
-      // Get references to the counter display and button
-      const counterDisplay = document.getElementById("counter");
-      const submitBtn = document.getElementById("button-submit");
-      const usernameInput = document.getElementById("nameInput");
+        // Display the current counter value
+        document.getElementById('counter').textContent = counter;
 
-      // Function to handle the submit button click
-      submitBtn.addEventListener("click", () => {
-        const username = usernameInput.value.trim();
+        // Get references to the button and input field
+        const submitBtn = document.getElementById('button-submit');
+        const usernameInput = document.getElementById('nameInput');
 
-        // Check if the username is valid and not already submitted
-        if (username && !users.has(username)) {
-          users.add(username); // Add the user to the set
-          counter++; // Increment the counter
-          counterDisplay.textContent = counter; // Update the display
-          usernameInput.value = ""; // Clear the input field
-        } else if (users.has(username)) {
-          alert("You have already submitted!");
-        } else {
-          alert("Please enter a valid username.");
-        }
-      });
+        // Function to handle the submit button click
+        submitBtn.addEventListener('click', () => {
+            const username = usernameInput.value.trim(); // Get and trim the username input
+
+            // Check if the username is valid and not already submitted
+            if (username && !users.has(username)) {
+                users.add(username); // Add the user to the set
+                counter++; // Increment the counter
+
+                // Update localStorage
+                localStorage.setItem('counter', counter); // Save the counter
+                localStorage.setItem('users', JSON.stringify(Array.from(users))); // Save the users
+
+                // Update the display
+                document.getElementById('counter').textContent = counter;
+                usernameInput.value = ''; // Clear the input field
+            } else if (users.has(username)) {
+                alert("You have already submitted!"); // Alert for duplicate submission
+            } else {
+                alert("Please enter a valid username."); // Alert for empty input
+            }
+        });
 
       // Ensure only one checkbox can be selected at a time
       var checkboxes = document.querySelectorAll(".checkbox");
