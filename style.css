@@ -80,7 +80,8 @@ input {
   height: 20px;
 }
 .checkbox-group {
-  margin: 15px;
+  margin: 15px 20px;
+  border: 5px solid red;
 }
 .checkbox-group h2 {
   font-size: 22px;
@@ -91,7 +92,8 @@ input {
   }
 }
 .click-submit-button {
-  margin: 15px 0px;
+  margin: 30px 0px;
+  cursor: pointer;
 }
 .click-submit-button a {
   padding: 10px;
@@ -101,14 +103,16 @@ input {
   border: 2px solid rgb(255, 208, 0);
   background-color: rgb(255, 208, 0);
   border-radius: 15px;
+  transition: 0.5 ease-in;
 }
-
 .destination h2 {
+  display: none;
   margin: 20px 20px;
   border: 4px solid rgb(255, 208, 0);
   padding: 10px;
+  transition: 0.5 ease-in;
 }
-#destination{
+#destination {
   margin-right: 10px;
 }
 @media screen and (max-width: 1100px) {
@@ -121,4 +125,22 @@ input {
 }
 #nameInput {
   margin-right: 10px;
+}
+#share {
+  display: none;
+  margin: 20px 5px;
+  padding: 5px;
+  text-decoration: none;
+}
+.share a {
+  padding: 10px;
+  background-color: #000;
+  color: white;
+  margin: 0px 5px;
+  text-decoration: none;
+}
+.share i {
+  padding: 5px;
+  margin: 5px;
+  font-size: 18px;
 }

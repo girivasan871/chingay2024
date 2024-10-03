@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <header>
@@ -111,10 +118,22 @@
       </div>
 
       <div class="click-submit-button">
-        <a href="#" id="button-submit">#chingayforunesco </a>
+        <a id="button-submit">#chingayforunesco </a>
       </div>
       <div class="destination">
         <h2 id="destination"></h2>
+      </div>
+      <div id="share" class="share">
+       <button onclick="myFunction()">Copy text</button>
+        <a
+          href="https://www.facebook.com/sharer/sharer.php?u=http//xxxxxxxxx.co.uk/index.html/"
+          ><i class="fa-brands fa-facebook" style="color: #ffd43b"></i
+          >FACEBOOK</a
+        >
+        <a
+          ><i class="fa-brands fa-square-instagram" style="color: #ffd43b"></i
+          >INSTAGRAM</a
+        >
       </div>
     </header>
     <script>
@@ -125,6 +144,7 @@
           // Get all checkboxes
           var checkboxes = document.querySelectorAll(".checkbox");
           var name = document.getElementById("nameInput").value;
+          var share = document.getElementById("share");
           var selectedLabel = "";
 
           // Loop through each checkbox and find the one that's checked
@@ -138,11 +158,14 @@
           if (selectedLabel) {
             document.getElementById("destination").textContent =
               "Hello ! " + name + " - " + selectedLabel;
+            document.getElementById("destination").style.display = "block";
+            document.getElementById("share").style.display = "block";
           } else {
             document.getElementById("destination").textContent =
               "No checkbox selected.";
           }
         });
+
 
       // Ensure only one checkbox can be selected at a time
       var checkboxes = document.querySelectorAll(".checkbox");
