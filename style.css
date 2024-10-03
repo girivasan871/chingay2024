@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+header {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+/*header .banner {
+  background-image: url("./images/Chingay1.jpg");
+  width: 100%;
+  height: 450px;
+  background-size: cover;
+  margin: 5px 0px;
+}
+*/
+header .banner img {
+  width: 100%;
+  height: 450px;
+  background-size: cover;
+}
+
+header .writeup {
+  margin: 20px;
+  border: 4px solid rgb(255, 208, 0);
+  padding: 10px;
+}
+header .writeup h1 {
+  font-size: 24px;
+  padding: 20px 30px;
+}
+@media screen and (max-width: 1100px) {
+  header .banner img {
+    height: 140px;
+  }
+  header .writeup h1 {
+    font-size: 18px;
+  }
+}
+.name input[type="text"] {
+  width: 250px;
+  height: 40px;
+  margin: 0px 5px;
+  font-weight: bold;
+  padding: 5px;
+  font-size: 18px;
+}
+/*label {
+  font:
+    1rem 'Fira Sans',
+    sans-serif;
+}
+
+input {
+  margin: 0.4rem;
+}
+*/
+.choice h2 {
+  padding: 15px 0px;
+}
+.label {
+  background-color: #fff;
+  border: 1px solid #666;
+  color: #000;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 24px;
+  margin: 15px;
+  cursor: pointer;
+}
+.label input[type="checkbox"] {
+  margin: 0px 4px;
+  width: 20px;
+  height: 20px;
+}
+.checkbox-group {
+  margin: 15px;
+}
+.checkbox-group h2 {
+  font-size: 22px;
+}
+@media screen and (max-width: 1100px) {
+  .label h2 {
+    font-size: 18px;
+  }
+}
+.click-submit-button {
+  margin: 15px 0px;
+}
+.click-submit-button a {
+  padding: 10px;
+  text-decoration: none;
+  margin: 15px 0px;
+  color: rgb(52, 52, 52);
+  border: 2px solid rgb(255, 208, 0);
+  background-color: rgb(255, 208, 0);
+  border-radius: 15px;
+}
+
+.destination h2 {
+  margin: 20px 20px;
+  border: 4px solid rgb(255, 208, 0);
+  padding: 10px;
+}
+#destination{
+  margin-right: 10px;
+}
+@media screen and (max-width: 1100px) {
+  .checkbox-group h2 {
+    font-size: 16px;
+  }
+  .destination h2 {
+    font-size: 16px;
+  }
+}
+#nameInput {
+  margin-right: 10px;
+}

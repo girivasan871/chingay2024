@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="banner">
+        <img src="./images/Chingay1.jpg" />
+      </div>
+      <div class="writeup">
+        <h1>
+          Chingay has become a uniquely Singaporean tradition and a borderless
+          festival, which reflects our vibrant and multicultural society.
+        </h1>
+        <h1>
+          Chingay has evolved with creative and innovative concepts, powered by
+          the passions, dreams and aspirations of the people.
+        </h1>
+        <h1>
+          Singapore will be doing a joint nomination of Chingay for UNESCO. We
+          will like you and your community to pledge support as this will be
+          part of submission to UNESCO.
+        </h1>
+      </div>
+      <div class="choice">
+        <h2>Enter Your Name and Select one of the Following</h2>
+      </div>
+      <div class="name">
+        <input type="text" id="nameInput" placeholder="NAME" /><br />
+      </div>
+      <div class="your-msg">
+        <!-- <fieldset>
+          <legend>Choose your monster's features:</legend>
+
+          <div>
+            <input type="checkbox" id="scales" name="scales" checked />
+            <label for="scales">Scales</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="horns" name="horns" />
+            <label for="horns">Horns</label>
+          </div>
+        </fieldset>
+        </label>
+        -->
+        <!--
+        <label class="label">
+          <input type="checkbox" name="checkbox" value="text" />
+          <h2>
+            Let's light up the world with Chingay spirit. Join me in supporting
+            #chingayforunesco
+          </h2>
+        </label>
+        <label class="label">
+          <input type="checkbox" name="checkbox" value="text" />
+          <h2>
+            Bringing Singapore's multiculturalism to the world. Join me in
+            supporting #chingayforunesco
+          </h2>
+        </label>
+        <label class="label">
+          <input type="checkbox" name="checkbox" value="text" />
+          <h2>
+            For the community by the community for generations. Join me in
+            supporting #chingayforunesco
+          </h2>
+        </label>
+        <label class="label">
+          <input type="checkbox" name="checkbox" value="text" />
+          <h2>
+            Chingay, a singapore street parade. Join me in supporting
+            #chingayforunesco
+          </h2>
+        </label>
+      </div> -->
+        <div class="checkbox-group">
+          <label
+            ><input type="checkbox" class="checkbox" value="Option 1" />
+            <h2>
+              Let's light up the world with Chingay spirit. Join me in
+              supporting #chingayforunesco
+            </h2></label
+          ><br />
+          <label
+            ><input type="checkbox" class="checkbox" value="Option 2" />
+            <h2>
+              Bringing Singapore's multiculturalism to the world. Join me in
+              supporting #chingayforunesco
+            </h2></label
+          ><br />
+          <label
+            ><input type="checkbox" class="checkbox" value="Option 3" />
+            <h2>
+              For the community by the community for generations. Join me in
+              supporting #chingayforunesco
+            </h2></label
+          ><br />
+          <label
+            ><input type="checkbox" class="checkbox" value="Option 4" />
+            <h2>
+              Chingay, a singapore street parade. Join me in supporting
+              #chingayforunesco
+            </h2></label
+          >
+        </div>
+      </div>
+
+      <div class="click-submit-button">
+        <a href="#" id="button-submit">#chingayforunesco </a>
+      </div>
+      <div class="destination">
+        <h2 id="destination"></h2>
+      </div>
+    </header>
+    <script>
+      // JavaScript function to copy single checkbox label text
+      document
+        .getElementById("button-submit")
+        .addEventListener("click", function () {
+          // Get all checkboxes
+          var checkboxes = document.querySelectorAll(".checkbox");
+          var name = document.getElementById("nameInput").value;
+          var selectedLabel = "";
+
+          // Loop through each checkbox and find the one that's checked
+          checkboxes.forEach(function (checkbox) {
+            if (checkbox.checked) {
+              selectedLabel = checkbox.parentNode.textContent.trim(); // Copy the label text
+            }
+          });
+
+          // If a checkbox is selected, copy its label, else display a message
+          if (selectedLabel) {
+            document.getElementById("destination").textContent =
+              "Hello ! " + name + " - " + selectedLabel;
+          } else {
+            document.getElementById("destination").textContent =
+              "No checkbox selected.";
+          }
+        });
+
+      // Ensure only one checkbox can be selected at a time
+      var checkboxes = document.querySelectorAll(".checkbox");
+      checkboxes.forEach(function (checkbox) {
+        checkbox.addEventListener("change", function () {
+          checkboxes.forEach(function (box) {
+            if (box !== checkbox) box.checked = false; // Uncheck all other checkboxes
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
