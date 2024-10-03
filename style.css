@@ -43,6 +43,11 @@ header .writeup h1 {
     font-size: 18px;
   }
 }
+.count h1 {
+  background-color: #051d42;
+  color: white;
+  padding: 10px;
+}
 .name input[type="text"] {
   width: 250px;
   height: 40px;
