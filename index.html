@@ -28,8 +28,10 @@
           the passions, dreams and aspirations of the people.
         </h1>
         <h1>
-          Singapore will be doing a joint nomination of Chingay for UNESCO. We
-          will like you and your community to pledge support as this will be
+          Singapore will be doing a joint nomination of Chingay for UNESCO.
+        </h1>
+        <h1>
+          We will like you and your community to pledge support as this will be
           part of submission to UNESCO.
         </h1>
       </div>
@@ -121,7 +123,7 @@
       </div>
 
       <div class="click-submit-button">
-        <a id="button-submit">#chingayforunesco </a>
+        <a id="button-submit">Click Here to Show Your Support </a>
       </div>
       <div class="destination">
         <h2 id="destination"></h2>
@@ -170,38 +172,38 @@
         });
 
       // Initialize the counter and get users from localStorage
-        let counter = parseInt(localStorage.getItem('counter')) || 0; // Retrieve or initialize counter
-        const users = new Set(JSON.parse(localStorage.getItem('users')) || []); // Retrieve or initialize users
+      let counter = parseInt(localStorage.getItem("counter")) || 0; // Retrieve or initialize counter
+      const users = new Set(JSON.parse(localStorage.getItem("users")) || []); // Retrieve or initialize users
 
-        // Display the current counter value
-        document.getElementById('counter').textContent = counter;
+      // Display the current counter value
+      document.getElementById("counter").textContent = counter;
 
-        // Get references to the button and input field
-        const submitBtn = document.getElementById('button-submit');
-        const usernameInput = document.getElementById('nameInput');
+      // Get references to the button and input field
+      const submitBtn = document.getElementById("button-submit");
+      const usernameInput = document.getElementById("nameInput");
 
-        // Function to handle the submit button click
-        submitBtn.addEventListener('click', () => {
-            const username = usernameInput.value.trim(); // Get and trim the username input
+      // Function to handle the submit button click
+      submitBtn.addEventListener("click", () => {
+        const username = usernameInput.value.trim(); // Get and trim the username input
 
-            // Check if the username is valid and not already submitted
-            if (username && !users.has(username)) {
-                users.add(username); // Add the user to the set
-                counter++; // Increment the counter
+        // Check if the username is valid and not already submitted
+        if (username && !users.has(username)) {
+          users.add(username); // Add the user to the set
+          counter++; // Increment the counter
 
-                // Update localStorage
-                localStorage.setItem('counter', counter); // Save the counter
-                localStorage.setItem('users', JSON.stringify(Array.from(users))); // Save the users
+          // Update localStorage
+          localStorage.setItem("counter", counter); // Save the counter
+          localStorage.setItem("users", JSON.stringify(Array.from(users))); // Save the users
 
-                // Update the display
-                document.getElementById('counter').textContent = counter;
-                usernameInput.value = ''; // Clear the input field
-            } else if (users.has(username)) {
-                alert("You have already submitted!"); // Alert for duplicate submission
-            } else {
-                alert("Please enter a valid username."); // Alert for empty input
-            }
-        });
+          // Update the display
+          document.getElementById("counter").textContent = counter;
+          usernameInput.value = ""; // Clear the input field
+        } else if (users.has(username)) {
+          alert("You have already submitted!"); // Alert for duplicate submission
+        } else {
+          alert("Please enter a valid username."); // Alert for empty input
+        }
+      });
 
       // Ensure only one checkbox can be selected at a time
       var checkboxes = document.querySelectorAll(".checkbox");
