@@ -130,7 +130,14 @@
       </div>
       <div id="share" class="share">
         <button onclick="myFunction()">Copy text</button>
-        <a id="shareFacebook"
+        <img
+          id="image"
+          src="./images/Chingay.jpg"
+          alt="Image to Share"
+          style="display: none"
+        />
+        <a
+          id="shareFacebook"
           href="https://www.facebook.com/sharer/sharer.php?u=http//xxxxxxxxx.co.uk/index.html/"
           ><i class="fa-brands fa-facebook" style="color: #ffd43b"></i
           >FACEBOOK</a
@@ -206,11 +213,16 @@
       });
 
       // JavaScript for Facebook sharing
-    document.getElementById('shareFacebook').addEventListener('click', function () {
-      const promptText = document.getElementById('destination').innerText;
-      const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=${encodeURIComponent(promptText)}`;
-      window.open(facebookUrl, '_blank');
-    });
+      document
+        .getElementById("shareFacebook")
+        .addEventListener("click", function () {
+          const promptText = document.getElementById("destination").innerText;
+          const imageUrl = document.getElementById("image").src;
+          const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+            window.location.href
+          )}&quote=${encodeURIComponent(promptText)}`;
+          window.open(facebookUrl, "_blank");
+        });
 
       // Ensure only one checkbox can be selected at a time
       var checkboxes = document.querySelectorAll(".checkbox");
