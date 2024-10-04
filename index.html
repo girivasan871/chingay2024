@@ -124,7 +124,7 @@
       </div>
 
       <div class="click-submit-button">
-        <a id="button-submit">Click Here to Show Your Support </a>
+        <a href="#" id="button-submit">Click Here to Show Your Support </a>
       </div>
       <div class="destination">
         <h2 id="destination"></h2>
@@ -213,6 +213,15 @@
           alert("Please enter a valid username."); // Alert for empty input
         }
       });
+
+      document
+        .getElementById("button-submit")
+        .addEventListener("click", function () {
+          window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth",
+          });
+        });
 
       // JavaScript for Facebook sharing
       document
