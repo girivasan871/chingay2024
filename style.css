@@ -142,6 +142,10 @@ input {
   padding: 5px;
   text-decoration: none;
 }
+.share p {
+  padding: 0px 10px;
+  margin-bottom: 10px;
+}
 .share a {
   padding: 10px;
   background-color: #000;
