@@ -188,11 +188,13 @@
       // Get references to the button and input field
       const submitBtn = document.getElementById("button-submit");
       const usernameInput = document.getElementById("nameInput");
+      const supporttext = document.getElementById("support");
 
       // Function to handle the submit button click
       submitBtn.addEventListener("click", () => {
         const username = usernameInput.value.trim(); // Get and trim the username input
-
+        supporttext.textContent =
+          " We have " + username + " have pledged. Show you support!";
         // Check if the username is valid and not already submitted
         if (username && !users.has(username)) {
           users.add(username); // Add the user to the set
